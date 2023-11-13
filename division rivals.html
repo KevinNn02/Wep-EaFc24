@@ -1,0 +1,436 @@
+<!doctype html>
+
+<script type="text/javascript">
+  
+let params = new URLSearchParams(location.search);
+var correo = params.get('correo');
+
+</script>
+
+<link rel="shorcut icon"
+href="data:image/png;base64,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" type="image/png"/>
+<style type="text/css">
+  
+body{
+
+ background-image: url(https://img.freepik.com/foto-gratis/cielo-estrellado_1048-11828.jpg?size=626&ext=jpg);
+ }
+c1.{
+
+  background-color: #FDFEFE ;
+}
+
+    
+</style>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<title>EA FC24</title>
+
+</head>
+<body >
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="background-color: ##000;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <img src="https://logowik.com/content/uploads/images/ea-sports-fc-246887.logowik.com.webp" alt="" width="80" height="37">
+          <strong>EA FC24</strong>
+
+     </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="C:\Users\kmuno\OneDrive\Escritorio\Pagina Web\paginaa.html">Inicio</a>
+        </li>
+    </div>
+  </div>
+</nav>
+</div>
+
+
+
+
+<h1 class="display-4 font-weight-bold text-center pb4" style=" color: white">DIVISION RIVALS</h1>
+
+
+
+<section>
+  
+<div class="container" >
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_1.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 10 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Oro, x1 Pack pequeño de Jugadores Mixto (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro, x2 Packs pequeños de Jugadores Mixtos (No intercambiable)</h6>
+      <h6>Opción 3: 2.000 monedas, x1 Pack de Oro, x1 Pack pequeño de Jugadores Mixto (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Oro Premium, x1 Pack pequeño de Jugadores de Oro (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro Premium, x2 Packs pequeños de Jugadores de Oro (No intercambiable)</h6>
+      <h6>Opción 3: 3.500 monedas, x1 Pack de Oro Premium, x1 Pack de Mejora de Oro (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-12 col-md-4"> 
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_2.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+       <h5 class="card-title">Division 9 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Mejora de Oro, x1 Pack de Oro Jumbo (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Mejora de Oro, x2 Packs de Oro Jumbo (No intercambiable)</h6>
+      <h6>Opción 3: 3.000 monedas, x1 Pack de Mejora de Oro, x1 Pack de Oro Jumbo (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Mejora de Oro Raro, x1 Pack de Oro Jumbo Premium (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Mejora de Oro Raros, x2 Packs de Oro Jumbo Premium (No intercambiable)</h6>
+      <h6>Opción 3: 7.500 monedas, x1 Pack de Mejora de Oro Raro, x1 Pack de Oro Jumbo Premium (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
+      <div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_3.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 8 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Mejora de Oro Premium, x1 Pack de Oro Jumbo Premium (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Mejora de Oro Premium, x2 Packs de Oro Jumbo (No intercambiable)</h6>
+      <h6>Opción 3: 4.000 monedas, x1 Pack de Mejora de Oro, x1 Pack de Oro Jumbo Premium (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Mejora de Oro Raro Mixto, x1 Pack de Oro Jumbo Premium 26, x1 Pack de Jugadores de Oro Premium (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Mejora de Oro Raros Mixtos, x2 Packs de Oro Jumbo Premium 26, x2 Packs de Jugadores de Oro Premium (No intercambiable)</h6>
+      <h6>Opción 3: 10.000 monedas, x1 Pack de Mejora de Oro Raro, x1 Pack de Oro Jumbo Premium (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+       <div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_4.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 7 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Oro Jumbo Premium 26, x1 Pack Pequeño de Jugadores de Oro Prime (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro Jumbo Premium 26, x2 Packs Pequeño de Jugadores de Oro Prime (No intercambiable)</h6>
+      <h6>Opción 3: 5.000 monedas, x1 Pack de Oro Jumbo Premium 26, x1 Pack Pequeño de Jugadores de Oro Prime (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Jugadores de Oro Premium, x1 Mega Pack (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Jugadores de Oro Premium, x2 Mega Packs (No intercambiable)</h6>
+      <h6>Opción 3: 12.500 monedas, x1 Pack de Jugadores de Oro Premium, x1 Mega Pack (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+    <div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_5.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 6 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Oro, x1 Pack pequeño de Jugadores Mixto (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro, x2 Packs pequeños de Jugadores Mixtos (No intercambiable)</h6>
+      <h6>Opción 3: 2.000 monedas, x1 Pack de Oro, x1 Pack pequeño de Jugadores Mixto (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Oro Premium, x1 Pack pequeño de Jugadores de Oro (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro Premium, x2 Packs pequeños de Jugadores de Oro (No intercambiable)</h6>
+      <h6>Opción 3: 3.500 monedas, x1 Pack de Oro Premium, x1 Pack de Mejora de Oro (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+      <div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_6.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 5 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Oro, x1 Pack pequeño de Jugadores Mixto (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro, x2 Packs pequeños de Jugadores Mixtos (No intercambiable)</h6>
+      <h6>Opción 3: 2.000 monedas, x1 Pack de Oro, x1 Pack pequeño de Jugadores Mixto (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Oro Premium, x1 Pack pequeño de Jugadores de Oro (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro Premium, x2 Packs pequeños de Jugadores de Oro (No intercambiable)</h6>
+      <h6>Opción 3: 3.500 monedas, x1 Pack de Oro Premium, x1 Pack de Mejora de Oro (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ <div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_7.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 4 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Oro Jumbo Premium, x1 Mega Pack (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro Jumbo Premium, x2 Mega Packs (No intercambiable)</h6>
+      <h6>Opción 3: 20.000 monedas, x1 Pack de Jugadores de Oro Prime, x1 Mega Pack Raro (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Jugadores de Oro Prime, x1 Mega Pack Raro (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Jugadores de Oro Prime, x2 Mega Packs Raro (No intercambiable)</h6>
+      <h6>Opción 3: 3.500 monedas, x1 Pack de Oro Premium, x1 Pack de Mejora de Oro (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_8.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 3 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Oro Jumbo Premium 26, x1 Pack de Jugadores de Oro Prime (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Oro Jumbo Premium 26, x2 Packs de Jugadores de Oro Prime (No intercambiable)</h6>
+      <h6>Opción 3: 12.500 monedas, x1 Pack de Oro Jumbo Premium 26, x1 Pack de Jugadores de Oro Prime (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Oro Jumbo Premium, x1 Pack de Jugadores de Oro Jumbo Premium, x1 Pack de Jugadores de Oro Raro (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Pack de Oro Jumbo Premium, x2 Pack de Jugadores de Oro Jumbo Premium, x2 Pack de Jugadores de Oro Raro (No intercambiable)</h6>
+      <h6>Opción 3: 25.000 monedas, x1 Pack de Oro Jumbo Premium, x1 Pack de Jugadores de Oro Jumbo Premium, x1 Pack de Jugadores de Oro Raro (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_9.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 2 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Mejora de Oro Raro, x1 Pack de Jugadores de Oro Jumbo Prime (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Mejora de Oro Raro, x2 Packs de Jugadores de Oro Jumbo Prime (No intercambiable)</h6>
+      <h6>Opción 3: 16.250 monedas, x1 Pack de Mejora de Oro Raro, x1 Pack de Jugadores de Oro Jumbo Prime (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Jugadores Raro Electrum, x1 Pack de Jugadores de Oro Jumbo Premium, x1 Pack de Jugadores de Oro Raro (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Jugadores Raro Electrum, x2 Packs de Jugadores de Oro Jumbo Premium, x2 Packs de Jugadores de Oro Raro (No intercambiable)</h6>
+      <h6>Opción 3: 32.500 monedas, x1 Pack de Jugadores Raro Electrum, x1 Pack de Jugadores de Oro Jumbo Premium, x1 Pack de Jugadores de Oro Raro (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_10.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division 1 (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Mega Pack, x1 Pack de Jugadores de Oro Raro (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Mega Packs, x2 Packs de Jugadores de Oro Raro (No intercambiable)</h6>
+      <h6>Opción 3: 17.500 monedas, x1 Mega Pack, x1 Pack de Jugadores de Oro Raro (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Pack de Jugadores de Oro Prime, x1 Pack de Jugadores Jumbo Raro, x1 Pack de Oro Raro (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Pack de Jugadores de Oro Prime, x2 Pack de Jugadores Jumbo Raro, x2 Pack de Oro Raro (No intercambiable)</h6>
+      <h6>Opción 3: 40.000 monedas, x1 Pack de Jugadores de Oro Prime, x1 Pack de Jugadores Jumbo Raro, x1 Pack de Oro Raro (No intercambiable)
+      </h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-sm-12 col-md-4">
+      <div class="card mb-3" style="max-width: 400px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.vandal.net/m/10-2021/202110711592175_11.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-15">
+      <div class="card-body">
+        <h5 class="card-title">Division Elite (4 a 7 victorias)</h5>
+        <p class="card-text"><h4>Recompensas basicas<h6>Opción 1: x1 Pack de Jugadores de Oro Raro, x1 Pack de Oro Raro, x1 Jugador de Media +84 (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Packs de Jugadores de Oro Raro, x2 Packs de Oro Raro, x2 Jugadores de Media +84 (No intercambiable)</h6>
+      <h6>Opción 3: 25.000 monedas, x1 Pack de Jugadores de Oro Raro, x1 Pack de Oro Raro, x1 Jugador de Media +84 (No intercambiable)</h6>
+
+      <h4>Recompensas mejoredas<h6>Opción 1: x1 Mega Pack, x1 Pack de Jugadores Raro, x1 Pack de Jugadores Jumbo Raro, 2 Jugadores de Media +84 (Intercambiable)</h6></h4>
+      <h6>Opción 2: x2 Mega Packs, x2 Packs de Jugadores Raro, x2 Packs de Jugadores Jumbo Raro, 2 Jugadores de Media +84 (No intercambiable)</h6>
+      <h6>Opción 3: 45.000 monedas, x1 Mega Pack, x1 Pack de Jugadores Raro, x1 Pack de Jugadores Jumbo Raro, 2 Jugadores de Media +84 (No intercambiable)</h6></p> 
+        <p class="card-text"><small class="text-muted">ultima actualizacion 22 de septiembre.</small></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    /* Agregar estilos personalizados aquí si es necesario */
+    .center-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+  </style>
+</head>
+
+<div class="container center-card">
+  <div class="card" style="max-width: 600px;">
+    <img class="card-img-top" src="https://media.vandal.net/i/620x348/9-2023/28/202392813243239_3.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">¿Qué es Division Rivals?</h4>
+      <p class="card-text" id="card-text">
+        <!-- Contenido de la tarjeta -->
+        Si eres un jugador nuevo y quieres conocer cómo funciona Division Rivals en EA Sports FC 24, aquí te enseñamos un resumen rápido de en qué consiste este modo del Ultimate Team.
+      </p>
+      <p class="card-text" id="card-text-more" style="display: none;">
+        <!-- Contenido adicional oculto -->
+       
+       Básicamente Rivals se trata de una modalidad online en la que cada semana se compite contra otros jugadores para ascender o descender puestos en divisiones globales.
+
+    Es el modo de juego favorito para los jugadores que quieren retarse y jugar a un alto nivel en UT.
+
+    En Rivals hay un total de 10 divisiones clasificatorias, cada una con sus propios rangos o  puestos, distintas etapas y puntos de control (al alcanzar estos puntos de control nos aseguramos de que no bajaremos de clasificación, de manera que garantizamos nuestra posición incluso si perdemos partidos).
+
+    Sin contar la división Élite, que es donde compiten los mejores jugadores del mundo, en el resto de divisiones se progresa según los puntos que ganamos jugando partidos.
+
+    En Division Rivals puedes ganar 2 puntos por una racha de victorias consecutivas y 1 punto por una victoria, en caso de empatar no recibes ningún punto y si pierdes el partido se te resta 1 punto.
+
+    Cuanto más alto llegues en las divisiones, mejores serán las recompensas finales que podrás elegir.
+
+    En cada rango puedes obtener recompensas básicas por lograr entre 4 a 7 victorias o mejorar estas recompensas básicas si logras 8 victorias o más en la semana.
+
+    Por si todo esto fuera poco, el modo Division Rivals va cambiando con el paso de las temporadas de UT. Esto quiere decir que habrá nuevas recompensas con cada cambio de temporada y estas se van actualizando. Debes saber que, obviamente, al cambiar de una temporada a otra los jugadores bajan de su división actual para tener que volver a progresar en la nueva temporada.
+
+    Esto es todo lo que debes saber de Division Rivals en EA Sports FC 24. No olvides que también puedes echar un vistazo a nuestras guías del resto de modos de UT y más contenidos del juego.
+
+      </p>
+      <a href="#!" class="btn btn-primary" id="toggle-button">Leer más</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+
+
+
+
+
+
+<!-- Incluir scripts de Bootstrap y jQuery si es necesario -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+
+<script>
+  // JavaScript para mostrar/ocultar el contenido adicional
+  document.getElementById('toggle-button').addEventListener('click', function() {
+    var cardText = document.getElementById('card-text');
+    var cardTextMore = document.getElementById('card-text-more');
+
+    if (cardText.style.display === 'none') {
+      cardText.style.display = 'block';
+      cardTextMore.style.display = 'none';
+      this.innerText = 'Leer más';
+    } else {
+      cardText.style.display = 'none';
+      cardTextMore.style.display = 'block';
+      this.innerText = 'Leer menos';
+    }
+  });
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  
+ if (correo !="") {
+
+  boton=document.getElementById('boton');
+  boton.remove();
+
+  correo=correo.split('@');
+
+  correo=correo[0];
+
+  document.getElementById('parrafo1').innerText="Bienvenido: " + correo;
+   document.getElementById('parrafo1').className="bg-warning pt-2 text-uppercase"
+
+ }
+</script>
+
+
+
+
+
+  </body>
+</html>
